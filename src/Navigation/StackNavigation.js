@@ -11,11 +11,11 @@ const HomeStackNavigator = () => {
            <Stack.Navigator
       screenOptions={{
         headerStyle: {
-        backgroundColor: '#887d77',
+        backgroundColor: '#391213',
         elevation: 0, 
         shadowOpacity: 0,
         },
-        headerTintColor: '#333333',
+        headerTintColor: '#ffffff',
         headerTitleStyle: {
         fontWeight: 'bold',
         },

@@ -30,6 +30,7 @@ const TabNavigator = () => {
         },
         tabBarActiveTintColor: '#391213',
         tabBarInactiveTintColor: '#c1bab2',
+        tabBarInactiveBackgroundColor:'#170F0C',
         headerShown: false,
       })}
     >

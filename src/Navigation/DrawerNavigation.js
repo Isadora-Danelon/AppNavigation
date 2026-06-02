@@ -31,7 +31,7 @@ const DrawerNavigator = () => {
     <Drawer.Navigator 
       screenOptions={{
         headerStyle: { backgroundColor: '#170F0C', elevation: 0, shadowOpacity: 0 },
-        headerTintColor: '#333333',
+        headerTintColor: '#ffffff',
         drawerActiveBackgroundColor: '#391213',
         drawerActiveTintColor: '#c1bab2'
       }}
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     },
     itemText: {
         fontSize: 16,
-        color: '#333333'
+        color: '#170F0C'
     }
 })
 
