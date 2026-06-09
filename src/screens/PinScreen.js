@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     color: '#333333',
+    fontFamily: 'SansitaOne',
   },
   image: {
     width: '100%',
@@ -45,16 +46,19 @@ const styles = StyleSheet.create({
   },
   details: {
     padding: 16,
+    
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#333333',
     marginBottom: 8,
+    fontFamily: 'SansitaOne',
   },
   subtitle: {
     fontSize: 16,
     color: '#666666',
+    fontFamily: 'Sansita',
   },
 });
 

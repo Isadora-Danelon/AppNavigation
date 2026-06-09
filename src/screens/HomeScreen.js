@@ -1,10 +1,14 @@
 import React from 'react';
-import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { FlashList } from '@shopify/flash-list';
 import { imgs } from '../data/imagens';
 
 const HomeScreen = ({ navigation }) => {
   const renderItem = ({ item }) => (
-    <TouchableOpacity style={styles.productContainer} onPress={() => navigation.navigate('Pin', { Pin: item })}>
+    <TouchableOpacity
+      style={[styles.productContainer, { height: item.height }]}
+      onPress={() => navigation.navigate('Pin', { Pin: item })}
+    >
       <Image source={item.image} style={styles.productImage} />
       <View style={styles.descriptionContainer}>
         <Text style={styles.productName}>{item.description}</Text>
@@ -14,11 +18,18 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <FlatList
+      <View style={styles.subtitle}>
+        <Text style={[styles.text, styles.subtitleText]}>Design</Text>
+        <Text style={[styles.text, styles.subtitleText]}>Books</Text>
+        <Text style={[styles.text, styles.subtitleText]}>Art</Text>
+      </View>
+      <FlashList
         data={imgs}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
-        numColumns={2}
+        estimatedItemSize={220}
+        contentContainerStyle={styles.listContent}
+        masonry={{ columns: 2, spacing: 12 }}
       />
     </View>
   );
@@ -28,35 +39,61 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 8,
-    backgroundColor: '#EBEBEB',
+    backgroundColor: '#000',
+    
   },
   productContainer: {
-    flex: 1,
-    margin: 4,
-    padding: 15,
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    elevation: 2,
+    width: '100%',
+    marginBottom: 12,
+    backgroundColor: '#111',
+    borderRadius: 18,
+    overflow: 'hidden',
+    elevation: 4,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    alignItems: 'center',
-    justifyContent: 'center',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
   },
   productImage: {
-    width: 120,
-    height: 120,
-    resizeMode: 'contain',
-    marginBottom: 10,
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
   },
   descriptionContainer: {
-    width: '100%',
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    padding: 10,
+    backgroundColor: 'rgba(0,0,0,0.32)',
   },
   productName: {
-    fontSize: 14,
-    color: '#333333',
+    fontSize: 13,
+    color: '#fff',
+    fontFamily: 'SansitaOne',
+    lineHeight: 18,
+  },
+  listContent: {
+    paddingHorizontal: 10,
+    paddingBottom: 20,
+  },
+  subtitle: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    paddingVertical: 20,
+  },
+  subtitleText: {
+    textDecorationLine: 'underline',
+    textDecorationColor: '#fff',
+    textDecorationStyle: 'solid',
     textAlign: 'center',
+    minWidth: 100,
+  },
+    text: {
+    fontSize: 18,
+    color: '#fff',
+    fontFamily: 'SansitaOne',
   },
 });
 

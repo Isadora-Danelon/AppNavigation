@@ -14,10 +14,12 @@ const HomeStackNavigator = () => {
         backgroundColor: '#391213',
         elevation: 0, 
         shadowOpacity: 0,
+        
         },
         headerTintColor: '#ffffff',
         headerTitleStyle: {
         fontWeight: 'bold',
+        fontFamily: 'SansitaOne',
         },
       }}
     >

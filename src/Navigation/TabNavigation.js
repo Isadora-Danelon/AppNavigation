@@ -32,6 +32,7 @@ const TabNavigator = () => {
         tabBarInactiveTintColor: '#c1bab2',
         tabBarInactiveBackgroundColor:'#170F0C',
         headerShown: false,
+        fontFamily: 'SansitaOne',
       })}
     >
       <Tab.Screen name="Início" component={HomeStackNavigator} />

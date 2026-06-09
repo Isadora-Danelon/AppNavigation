@@ -12,7 +12,8 @@ const ChatScreen = () => {
       </View>
 
       <View style={styles.subtitle}>
-      <Text style={styles.text}>Atualizações  Caixa de Entrada</Text>
+        <Text style={[styles.text, styles.subtitleText]}>Atualizações</Text>
+        <Text style={[styles.text, styles.subtitleText]}>Caixa de Entrada</Text>
       </View>
 
       <View style={styles.title2}>
@@ -133,6 +134,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 18,
     color: '#fff',
+    fontFamily: 'SansitaOne',
   },
 
   title: {
@@ -155,7 +157,6 @@ const styles = StyleSheet.create({
 
   title3: {
     paddingVertical: 10,
-    paddingHorizontal: 16,
     marginTop: 0,
     marginBottom: 8,
     flexDirection: 'row',
@@ -170,32 +171,40 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   contato: {
-    paddingHorizontal: 16,
-    paddingBottom: 16,
+    paddingBottom: 10,
     fontSize: 15,
     color: '#fff',
   },
   subtitle: {
-    display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     alignItems: 'center',
-    fontSize: 18,
-    color: '#fff',
+    paddingVertical: 12,
+  },
+  subtitleText: {
+    textDecorationLine: 'underline',
+    textDecorationColor: '#fff',
+    textDecorationStyle: 'solid',
+    textAlign: 'center',
+    minWidth: 140,
   },
   c: {
     flex: 1,
     fontSize: 18,
     color: '#fff',
+    fontFamily: 'SansitaOne',
   },
   pares: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 8,
+    backgroundColor:'',
   },
   info: {
     flex: 1,
     paddingLeft: 12,
     color: '#fff',
+    fontFamily: 'SansitaOne',
   },
   pImage: {
     width: 30,
