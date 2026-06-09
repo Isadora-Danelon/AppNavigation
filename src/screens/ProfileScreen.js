@@ -1,7 +1,6 @@
 import React from 'react';
-import { ScrollView, View, Text, FlatList, Image, StyleSheet, TouchableOpacity, TextInput, Dimensions } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import Entypo from '@expo/vector-icons/Entypo';
 
 const ProfileScreen = () => {
 
@@ -18,9 +17,26 @@ const ProfileScreen = () => {
             />
           </View>
         </View>
-      <View style={styles.perfil}>
-        <Ionicons name="person" size={24} size={50}color="#fff" />
+
+      <View style={styles.profileRow}>
+        <View style={styles.avatarContainer}>
+          <View style={styles.avatarCircle}>
+            <Ionicons name="person" size={32} color="#fff" />
+          </View>
         </View>
+
+        <View style={styles.profileText}>
+          <Text style={styles.userName}>User Name</Text>
+          <View style={styles.pinterestBadge}>
+            <Ionicons name="logo-pinterest" size={18} color="#E60023" />
+            <Text style={styles.badgeText}>isadoragregatti</Text>
+          </View>
+        </View>
+
+        <TouchableOpacity style={styles.lockButton}>
+          <Ionicons name="lock-closed" size={24} color="#fff" />
+        </TouchableOpacity>
+      </View>
     </View>
 
     </ScrollView>
@@ -61,13 +77,52 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
     alignItems: 'center',
   },
-  perfil: {
-  marginLeft:30,
-  width:70,
-  height:70,
-  backgroundColor: 'red',
-  padding:10,
-  borderRadius:'50%',
+  profileRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+  },
+  avatarContainer: {
+    marginRight: 12,
+  },
+  avatarCircle: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    backgroundColor: '#2f2f2f',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  profileText: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  userName: {
+    fontSize: 26,
+    color: '#fff',
+    fontFamily: 'SansitaOne',
+    fontWeight: '700',
+    marginBottom: 4,
+  },
+  pinterestBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  badgeText: {
+    color: '#fff',
+    marginLeft: 8,
+    fontSize: 14,
+    fontFamily: 'SansitaOne',
+  },
+  lockButton: {
+    width: 48,
+    height: 48,
+    borderRadius: 16,
+    backgroundColor: '#1a1a1a',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
